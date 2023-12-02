@@ -8,7 +8,7 @@ import Post from './Post';
 const App = () => {
   return (
     <Router>
-      <div className="container mx-auto max-w-screen-lg">
+      <div className="h-screen container mx-auto max-w-screen-lg bg-gray-100">
         <Header />
         <Routes>
           <Route path="/thread/new" element={<Post />} />

@@ -21,7 +21,7 @@ const ThreadList = () => {
     <ul className='p-3'>
       {threads.map((thread) => (
         <li key={thread.id}>
-          <a href={`/threads/${thread.id}`} className='block mb-2 p-4 bg-gray-100 rounded-lg transition ease-in-out hover:bg-cyan-50 duration-100'>
+          <a href={`/threads/${thread.id}`} className='block mb-2 p-4 bg-white rounded-lg transition ease-in-out hover:bg-cyan-50 duration-100'>
           <h3 className='flex items-center justify-between'>{thread.title}<IcOutlineArrowForward /></h3>
           <p>{thread.description}</p>
           </a>
