@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ThreadList from './components/ThreadList';
 import Header from './components/Header';
-import Post from './Post';
+import ThreadPost from './components/ThreadPost';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <div className="h-screen container mx-auto max-w-screen-lg bg-gray-100">
         <Header />
         <Routes>
-          <Route path="/thread/new" element={<Post />} />
+          <Route path="/thread/new" element={<ThreadPost />} />
           <Route path="/" element={<ThreadList />} />
         </Routes>
       </div>

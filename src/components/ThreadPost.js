@@ -1,29 +1,36 @@
 // Post.js
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
-const Post = () => {
+const ThreadPost = () => {
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const thread = {
-      title,
-      description
+      title
     };
 
     try {
-      await axios.post('https://railway.bulletinboard.techtrain.dev/threads', thread);
+      const response = await fetch('https://railway.bulletinboard.techtrain.dev/threads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(thread)
+      });
+
+      if (!response.ok) {
+        throw new Error('Response was not ok');
+      }
+
       window.alert('新しいスレッドを作成しました！');
     } catch (error) {
       window.alert('スレッド名が空です');
     }
 
     setTitle('');
-    setDescription('');
-
   };
 
   return (
@@ -47,4 +54,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default ThreadPost;
